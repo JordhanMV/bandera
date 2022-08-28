@@ -1,0 +1,96 @@
+*
+{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: sans-serif;
+}
+
+body
+{
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+overflow: hidden;
+}
+
+ul
+{
+position: relative;
+display: flex;
+flex-direction: column;
+}
+
+ul li
+{
+list-style: none;
+text-align: center;
+color: rgb(0, 0, 0);
+font-size: 3em;
+font-weight: 700;
+cursor: pointer;
+padding: 5px 20px;
+border-radius: 100px;
+}
+
+ul:hover li
+{
+color: transparent;
+-webkit-text-stroke: 1px #000;
+}
+
+ul li:hover
+{
+color: #333;
+background-color: aliceblue;
+box-shadow: 0px 5px 15px rgba(0,0,0,0.075) ;
+}
+
+ul li::before
+{
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 100vw;
+height: 100vh;
+background-color: red;
+z-index: -1;
+display: flex;
+justify-content: center;
+align-items: center;
+opacity: 0;
+transition: 0.5s;
+color: rgba(0, 0, 0, 0.445);
+-webkit-text-stroke: 1px #000;
+letter-spacing: 100px;
+
+}
+
+
+ul li:hover::before
+{
+content: attr(data-text);
+opacity: 1;
+letter-spacing: 50px;
+}
+
+ul li:nth-child(1):before
+{
+background: linear-gradient(#1c07db 0%, #1c07db 33%,
+#fff 33% , #fff 66% , #1c07db 66%, #1c07db 100% );
+}
+
+ul li:nth-child(2):before
+{
+background: linear-gradient(#1c07db 0%, #1c07db 33%,
+#fff 33% , #fff 66% , #f52905 66%, #db0e07 100% );
+}
+
+ul li:nth-child(3):before
+{
+background: linear-gradient(#f5f109 0%, #ecf018 33%,
+#fff 33% , #fff 66% , #db9807 66%, #f5870a 100% );
+}
